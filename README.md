@@ -1,6 +1,6 @@
 
 # 🌍 GII TimeFold CV Forecast (2021–2025) 
-## Bu çalışma Global Innovation Index (GII) tahmini için tasarlanmış, sızıntısız, zamana duyarlı, gerçekçi ve tekrarlanabilir bir makine öğrenimi pipeline’ıdır.Pipeline, yıllar arası bilgi sızıntısını ortadan kaldıran Time-Fold Cross-Validation yapısını kullanır.
+## Bu çalışma Global Innovation Index (GII) tahmini için tasarlanmış, sızıntısız, zamana duyarlı, gerçekçi ve tekrarlanabilir bir makine öğrenimi sürecidir. Süreç, yıllar arası bilgi sızıntısını ortadan kaldıran Time-Fold Cross-Validation yapısını kullanır.
 
 ## 📘 Notebook & Veri Seti
 
