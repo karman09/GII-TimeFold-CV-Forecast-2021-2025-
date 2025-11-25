@@ -4,12 +4,8 @@
 ##  Veri Seti
 
 ## 📘 Colab Notebook
+🔗 [Colab Üzerinde Aç](https://colab.research.google.com/drive/10FsgY2jjHbj90VDW4izMx3b2lJ5aFJd3?usp=drive_link)
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/10FsgY2jjHbj90VDW4izMx3b2lJ5aFJd3?usp=drive_link)
-
-
-### 📂 Veri Seti
-[FINAL_PREPROCESSED_DATA.xlsx](data/FINAL_PREPROCESSED_DATA.xlsx)
 
 
 # 🧭 1. Proje Özeti
