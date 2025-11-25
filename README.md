@@ -87,7 +87,7 @@ Bias yüksekse özellikle etkili
 
 #### 🔁 Expanding window (gerçek zaman akışını taklit eder)
 
-### 🎯 En sağlam geçerlilik (2025 test yılına dokunulmaz)
+### 🎯 geçerlilik (2025 test yılına dokunulmaz)
 
 ### 🧪 CV tamamen train içinde
 
