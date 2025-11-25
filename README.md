@@ -14,7 +14,7 @@
 
 # 🧭 1.Çalışma Özeti
 
-## Bu proje yıllık veriler üzerinde gelecek yılı tahmin etmek üzere tasarlanmış bir zaman-serisi odaklı ML yapısıdır. Pipeline; veri temizleme, özellik seçimi, zaman tabanlı validasyon, çoklu model eğitimi ve nihai forecast adımlarını eksiksiz uygular.
+## Bu proje yıllık veriler üzerinde gelecek yılı tahmin etmek üzere tasarlanmış bir zaman-serisi odaklı ML yapısıdır. Süreç; veri temizleme, özellik seçimi, zaman tabanlı validasyon, çoklu model eğitimi ve nihai forecast adımlarını uygular.
 
 ### Kullanılan ana bileşenler:
 
@@ -63,8 +63,6 @@ Stabil ve sağlam modeller üretir
 ### 🔺 AdaBoost Regressor
 
 DecisionTree tabanlı
-
-Weak learner → güçlü modele dönüşüm
 
 Bias yüksekse özellikle etkili
 
