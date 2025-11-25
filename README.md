@@ -1,4 +1,4 @@
-🌍 GII TimeFold CV Forecast (2021–2025)
+#🌍 GII TimeFold CV Forecast (2021–2025)
 Zero-Leakage, Time-Aware Machine Learning Forecasting Pipeline
 
 Bu proje, Global Innovation Index (GII) tahmini için tasarlanmış, tamamen sızıntısız, zamana duyarlı, gerçekçi ve tekrarlanabilir bir makine öğrenimi pipeline’ıdır.
