@@ -3,8 +3,10 @@
 ## Bu proje, Global Innovation Index (GII) tahmini için tasarlanmış, sızıntısız, zamana duyarlı, gerçekçi ve tekrarlanabilir bir makine öğrenimi pipeline’ıdır.Pipeline, yıllar arası bilgi sızıntısını ortadan kaldıran Time-Fold Cross-Validation yapısını kullanır.
 ## 📘 Notebook & Veri Seti
 
-### 🔗 Colab Notebook
-[![Open In Colab](https://colab.research.google.com/drive/10FsgY2jjHbj90VDW4izMx3b2lJ5aFJd3?usp=drive_link)
+## 📘 Colab Notebook
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/10FsgY2jjHbj90VDW4izMx3b2lJ5aFJd3?usp=drive_link)
+
 
 ### 📂 Veri Seti
 [FINAL_PREPROCESSED_DATA.xlsx](data/FINAL_PREPROCESSED_DATA.xlsx)
