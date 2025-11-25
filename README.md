@@ -1,14 +1,18 @@
 
 # 🌍 GII TimeFold CV Forecast (2021–2025) 
-## Bu proje, Global Innovation Index (GII) tahmini için tasarlanmış, sızıntısız, zamana duyarlı, gerçekçi ve tekrarlanabilir bir makine öğrenimi pipeline’ıdır.Pipeline, yıllar arası bilgi sızıntısını ortadan kaldıran Time-Fold Cross-Validation yapısını kullanır.
-##  Veri Seti
+## Bu çalışma Global Innovation Index (GII) tahmini için tasarlanmış, sızıntısız, zamana duyarlı, gerçekçi ve tekrarlanabilir bir makine öğrenimi pipeline’ıdır.Pipeline, yıllar arası bilgi sızıntısını ortadan kaldıran Time-Fold Cross-Validation yapısını kullanır.
 
-## 📘 Colab Notebook
-🔗 [Colab Üzerinde Aç](https://colab.research.google.com/drive/10FsgY2jjHbj90VDW4izMx3b2lJ5aFJd3?usp=drive_link)
+## 📘 Notebook & Veri Seti
+
+### 🚀 Colab Notebook
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/10FsgY2jjHbj90VDW4izMx3b2lJ5aFJd3?usp=drive_link)
+
+### 📂 Veri Seti (GitHub)
+[FINAL_PREPROCESSED_DATA.xlsx](./FINAL_PREPROCESSED_DATA.xlsx)
 
 
 
-# 🧭 1. Proje Özeti
+# 🧭 1.Çalışma Özeti
 
 ## Bu proje yıllık veriler üzerinde gelecek yılı tahmin etmek üzere tasarlanmış bir zaman-serisi odaklı ML yapısıdır. Pipeline; veri temizleme, özellik seçimi, zaman tabanlı validasyon, çoklu model eğitimi ve nihai forecast adımlarını eksiksiz uygular.
 
