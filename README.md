@@ -10,7 +10,7 @@ This project aims to forecast the **2025 Global Innovation Index (GII)** scores 
 ### 1. Multi-Lag Analysis
 The model iterates through **1-year (Lag-1)** and **2-year (Lag-2)** time delays to determine whether indicators have immediate or delayed effects on innovation scores. This allows for a comparative analysis of how different variables impact innovation over time.
 
-### 2. True Nested Temporal CV with Expanding Window
+### 2.  Nested CV with Expanding Window
 Unlike standard K-Fold CV which shuffles data (causing data leakage in time series), we utilize an **Expanding Window (Anchored Walk-Forward) Validation** strategy. This strictly preserves temporal order.
 
 #### 📅 Validation Scheme (Expanding Window):
