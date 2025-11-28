@@ -1,6 +1,6 @@
 # 🌍 Global Innovation Index (GII) Forecasting (2021-2025)
 
-This project aims to forecast the **2025 Global Innovation Index (GII)** scores using a rigorous **True Nested Temporal Cross-Validation** approach. The methodology addresses the challenges of small sample sizes and time-series dependencies by strictly preventing data leakage and evaluating both short-term (Lag-1) and medium-term (Lag-2) impacts of socio-economic indicators.
+This project aims to forecast the **2025 Global Innovation Index (GII)** scores using a rigorous ** Nested Temporal Cross-Validation** approach. The methodology addresses the challenges of small sample sizes and time-series dependencies by strictly preventing data leakage and evaluating both short-term (Lag-1) and medium-term (Lag-2) impacts of socio-economic indicators.
 
 ## 🚀 Key Features & Methodology
 
