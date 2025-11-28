@@ -45,8 +45,8 @@ The analysis is executed through 4 sequential scripts:
     * `FINAL_SELECTED_FEATURES_LAG1.xlsx`
     * `FINAL_SELECTED_FEATURES_LAG2.xlsx`
 
-### 3️⃣ Code 3: True Nested CV & Final Prediction
-* **Goal:** Performs the rigorous validation using the Expanding Window method and generates the final forecast for 2025.
+### 3️⃣ Code 3:  Nested CV & Final Prediction
+* **Goal:** Performs the validation using the Expanding Window method and generates the final forecast for 2025.
 * **Inner Loop:** Performs hyperparameter tuning (RandomizedSearchCV) for each model within each time fold.
 * **Models Used:** XGBoost, LightGBM, RandomForest, AdaBoost.
 * **Output:** `GII_2025_TRUE_NESTED_RESULTS.xlsx` (Contains R2, RMSE metrics, and 2025 Predictions).
