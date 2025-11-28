@@ -1,104 +1,78 @@
+# 🌍 Global Innovation Index (GII) Forecasting (2021-2025)
 
-# 🌍 GII TimeFold CV Forecast (2021–2025) 
-## Bu çalışma Global Innovation Index (GII) tahmini için tasarlanmış, sızıntısız, zamana duyarlı, gerçekçi ve tekrarlanabilir bir makine öğrenimi sürecidir. Süreç, yıllar arası bilgi sızıntısını ortadan kaldıran Time-Fold Cross-Validation yapısını kullanır.
+This project aims to forecast the **2025 Global Innovation Index (GII)** scores using a rigorous **True Nested Temporal Cross-Validation** approach. The methodology addresses the challenges of small sample sizes and time-series dependencies by strictly preventing data leakage and evaluating both short-term (Lag-1) and medium-term (Lag-2) impacts of socio-economic indicators.
 
-## 📘 Notebook & Veri Seti
+## 🚀 Key Features & Methodology
 
-### 🚀 Colab Notebook
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/10FsgY2jjHbj90VDW4izMx3b2lJ5aFJd3?usp=drive_link)
+### 1. Multi-Lag Analysis
+The model iterates through **1-year (Lag-1)** and **2-year (Lag-2)** time delays to determine whether indicators have immediate or delayed effects on innovation scores. This allows for a comparative analysis of how different variables impact innovation over time.
 
-### 📂 Veri Seti (GitHub)
-[FINAL_PREPROCESSED_DATA.xlsx](./FINAL_PREPROCESSED_DATA.xlsx)
+### 2. True Nested Temporal CV with Expanding Window
+Unlike standard K-Fold CV which shuffles data (causing data leakage in time series), we utilize an **Expanding Window (Anchored Walk-Forward) Validation** strategy. This strictly preserves temporal order.
 
+#### 📅 Validation Scheme (Expanding Window):
+The model is trained on past data and tested *strictly* on the future year, expanding the training set in each iteration:
 
+| Fold | Training Years | Test Year |
+| :--- | :--- | :--- |
+| **Fold 1** | `[2021]` | `[2022]` |
+| **Fold 2** | `[2021, 2022]` | `[2023]` |
+| **Fold 3** | `[2021, 2022, 2023]` | `[2024]` |
+| **FINAL** | `[2021, 2022, 2023, 2024]` | **Forecast 2025** |
 
-# 🧭 1.Çalışma Özeti
+### 3. Strict Feature Selection (Inside the Loop)
+To prevent "look-ahead bias," feature selection is performed dynamically **inside each fold** using *only* that fold's training data.
+1.  **High Correlation Filter:** Removes highly correlated features (>0.99).
+2.  **LASSO (L1 Regularization):** Selects the most predictive sparse features.
+3.  **Stepwise VIF (Variance Inflation Factor):** Removes multicollinearity (VIF > 10).
 
-## Bu proje yıllık veriler üzerinde gelecek yılı tahmin etmek üzere tasarlanmış bir zaman-serisi odaklı ML yapısıdır. Süreç; veri temizleme, özellik seçimi, zaman tabanlı validasyon, çoklu model eğitimi ve nihai forecast adımlarını uygular.
+---
 
-### Kullanılan ana bileşenler:
+## 📂 Project Structure & Workflow
 
-#### 🛡 Zero-Leakage Training
+The analysis is executed through 4 sequential scripts:
 
-#### ⏳ Time-Based Fold Cross-Validation (Train genişler → Test = 1 yıl sonrası)
+### 1️⃣ Code 1: Preprocessing
+* **Goal:** Cleans raw data, handles missing values, and standardizes country names.
+* **Output:** `FINAL_PREPROCESSED_DATA.xlsx`
 
-#### 🔍 Modified Z-Score Outlier Detection
+### 2️⃣ Code 2: Feature Selection (Multi-Lag Loop)
+* **Goal:** Identifies the "Selected Features" for Lag-1 and Lag-2 scenarios separately using the full training set (2021-2024). This serves as the basis for the final model and thesis reporting.
+* **Outputs:**
+    * `FINAL_SELECTED_FEATURES_LAG1.xlsx`
+    * `FINAL_SELECTED_FEATURES_LAG2.xlsx`
 
-#### 🩺 Median + KNN Imputation (train-only)
+### 3️⃣ Code 3: True Nested CV & Final Prediction
+* **Goal:** Performs the rigorous validation using the Expanding Window method and generates the final forecast for 2025.
+* **Inner Loop:** Performs hyperparameter tuning (RandomizedSearchCV) for each model within each time fold.
+* **Models Used:** XGBoost, LightGBM, RandomForest, AdaBoost.
+* **Output:** `GII_2025_TRUE_NESTED_RESULTS.xlsx` (Contains R2, RMSE metrics, and 2025 Predictions).
 
-####  📏 Train-Only StandardScaler
+### 4️⃣ Code 4: Process Reporting
+* **Goal:** Generates a detailed audit table for the thesis, showing exactly which variable passed or failed at which stage (LASSO/VIF) for both Lag scenarios.
+* **Features:** Includes English-to-Turkish translation of variable names for academic reporting.
+* **Output:** `FINAL_SUREC_TABLOSU.xlsx` (Contains separate sheets: `LAG_1_REPORT` and `LAG_2_REPORT`).
 
-#### 🧬 LASSO Feature Selection (LassoCV)
+---
 
-####  🔁 Iterative VIF Filtering
+## 📊 Results & Outputs
 
-#### 🤖 ML Modelleri: XGBoost, LightGBM, RandomForest, AdaBoost
+The project produces comparative results for:
+* **Lag 1 (Short-term impact):** How last year's data affects this year's GII.
+* **Lag 2 (Medium-term impact):** How data from two years ago affects this year's GII.
 
-#### 🎯 Son yıl (2025) için final forecast
+The final Excel files provide a transparent view of selected features, model performance metrics (R2, RMSE, MAE), and the final **2025 GII Score Predictions**.
 
-# 🤖 3. Model Eğitimi
+## 🛠️ Requirements
 
-## Pipeline; dört farklı regresyon modeliyle eğitilir.
+* Python 3.x
+* pandas
+* numpy
+* scikit-learn
+* xgboost
+* lightgbm
+* statsmodels
+* openpyxl
 
-### ⚡ XGBoost Regressor
-
-Gradient boosting
-
-Yüksek doğruluk
-
-Hızlı ve verimli
-
-### 💡 LightGBM Regressor
-
-Büyük veri için ideal
-
-Hızlı ve memory-efficient
-
-### 🌲 RandomForest Regressor
-
-Non-linear ilişkilerde güçlü
-
-Stabil ve sağlam modeller üretir
-
-### 🔺 AdaBoost Regressor
-
-DecisionTree tabanlı
-
-Bias yüksekse özellikle etkili
-
-## Tüm modeller için şu metrikler hesaplanır:
-
-### Train R², Test R², RMSE, MAE, MAPE (%), Time-Fold CV R² (Mean & Std), Model çalışma süresi (s)
-
-# 🕒 4. Time-Fold Cross-Validation Yapısı
-### Bu çalışmada, Cerqua vd. (2025) tarafından önerilen expanding window temporal cross-validation uygulanmıştır.
-## Toplam fold sayısı: 3
-| Fold | Train Yılları  | Valid (Test) Yılı |
-| ---- | -------------- | ----------------- |
-| 1    | 2021           | 2022              |
-| 2    | 2021–2022      | 2023              |
-| 3    | 2021–2022–2023 | 2024              |
-
-### Bu yapının sağladığı avantajlar:
-
-### 🚫 Zero leakage (ilerideki yılların bilgisi kullanılmaz)
-
-#### 🔁 Expanding window (gerçek zaman akışını taklit eder)
-
-### 🎯 geçerlilik (2025 test yılına dokunulmaz)
-
-### 🧪 CV tamamen train içinde
-
-# 📈 5. Final Forecast (2025 Tahmini)
-
-# Notebook sonunda:
-
-### 2021–2024 tüm verisiyle model yeniden eğitilir, 2025 yılı için forecast üretilir. 
-
-### Örnek çıktı:
-
-COUNTRY     |  PRED_2025
-------------|------------
-Country A   |   47.82
-Country B   |   61.12
-Country C   |   54.30
+---
+*Author: [karman09](https://github.com/karman09)*
