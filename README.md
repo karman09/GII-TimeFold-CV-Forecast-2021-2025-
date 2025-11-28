@@ -50,7 +50,6 @@ The analysis is executed through 4 sequential scripts:
 
 ### 4️⃣ Code 4: Process Reporting
 * **Goal:** Generates a detailed audit table for the thesis, showing exactly which variable passed or failed at which stage (LASSO/VIF) for both Lag scenarios.
-* **Features:** Includes English-to-Turkish translation of variable names for academic reporting.
 * **Output:** `FINAL_SUREC_TABLOSU.xlsx` (Contains separate sheets: `LAG_1_REPORT` and `LAG_2_REPORT`).
 
 ---
